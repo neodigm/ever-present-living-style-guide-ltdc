@@ -5,18 +5,18 @@
     </div>
 </section>
 <section class="row">
-    <div class="columns small-1 medium-2 large-4">
-        <p class="caption--p__roboto text-center">Problem:</p>
+    <div class="columns small-12 medium-12 large-4">
+        <p class="caption--p__roboto text-center">Problem</p>
         <hr>
         <p class="article--p__roboto text-center">The banners are presented inconsistently across the site. Individual pages embed the imagery differently and the content itself is inconsistent. Today some pages have no vertical white-space between the header and the banner and others have inconsistent horizontal margins. Maintaining the banners individually has been tedious and error prone. Banners are not distinguishable to assistive technologies.</p>
     </div>
-    <div class="columns small-1 medium-2 large-4">
-        <p class="caption--p__roboto text-center">Solution:</p>
+    <div class="columns small-12 medium-6 large-4">
+        <p class="caption--p__roboto text-center">Solution</p>
         <hr>
         <p class="article--p__roboto text-center">Establish a standard, reusable and consistent component for rendering the primary banner. Standardize the content within the targeted content area.</p>
     </div>
-    <div class="columns small-1 medium-2 large-4">
-        <p class="caption--p__roboto text-center">Reference:</p>
+    <div class="columns small-12 medium-6 large-4">
+        <p class="caption--p__roboto text-center">Reference</p>
         <hr>
         <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#wai-aria" target="_blank"
         class="button extended hollow">A11y</a>
@@ -47,18 +47,19 @@
 </pre>
 <hr>
 <pre>
-<code class="language-css">prime-banner--section {
+<code class="language-css">.prime-banner--section {
     padding-left: 0;
     padding-right: 0;
 }
-prime-banner--aside {
+.prime-banner--aside {
     height: 0px;
 }
-prime-banner--figure {
+.prime-banner--figure {
     padding-left: 0;
-    padding-right: 0; 
+    padding-right: 0;
+    margin-bottom: 10px;
 }
-shoppingCart prime-banner--aside {
+.shoppingCart .prime-banner--aside {
     height: 12px;
 }</code>
 </pre>
