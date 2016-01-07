@@ -8,12 +8,12 @@
     <div class="columns small-12 medium-12 large-4">
         <p class="caption--p__roboto text-center">Problem</p>
         <hr>
-        <p class="article--p__roboto text-center">The banners are presented inconsistently across the site. Individual pages embed the imagery differently and the content itself is inconsistent. Today some pages have no vertical white-space between the header and the banner and others have inconsistent horizontal margins. Maintaining the banners individually has been tedious and error prone. Banners are not distinguishable to assistive technologies.</p>
+        <p class="article--p__roboto text-center">Stop-gap.  <a href="http://foundation.zurb.com/sites/docs/v/5.5.3/upgrading.html" target="_blank">ZF4 Sections no longer supported.</a></p>
     </div>
     <div class="columns small-12 medium-6 large-4">
         <p class="caption--p__roboto text-center">Solution</p>
         <hr>
-        <p class="article--p__roboto text-center">Establish a standard, reusable and consistent component for rendering the primary banner. Standardize the content within the targeted content area.</p>
+        <p class="article--p__roboto text-center">Stop-gap.  ZF4 Sections no longer supported.</p>
     </div>
     <div class="columns small-12 medium-6 large-4">
         <p class="caption--p__roboto text-center">Reference</p>
@@ -22,8 +22,8 @@
         class="button extended hollow">A11y</a>
         <a href="https://css-tricks.com/bem-101/" target="_blank"
         class="button extended hollow">BEM</a>
-        <a href="http://placeholdit.imgix.net/~text?txtsize=33&txt=prime-banner&w=960&h=78" target="_blank"
-        class="button extended hollow">Place Holder</a>
+        <a href="http://foundation.zurb.com/sites/docs/v/5.5.3/components/accordion.html" target="_blank"
+        class="button extended hollow">ZF5 Accordion</a>
     </div>
 </section>
 
@@ -35,32 +35,33 @@
 	<aside class="columns small-12">
 
 <pre>
-<code class="language-markup">&ltsection     class="prime-banner--section row" role="banner"&gt;
-    &ltaside   class="prime-banner--aside columns small-10"&gt; &lt/aside&gt;
-    &ltfigure  class="prime-banner--figure columns small-10"
-    aria-label="Primary Banner"&gt;
-         &lt!-- Content Begin --&gt;
-         &ltimg class="prime-banner--img" src="" alt="" title=""&gt;
-         &lt!-- Content End   --&gt;
-    &lt/figure&gt;
+<code class="language-markup">&ltsection class="cust-accrd--section"&gt;
+    &lth2 class="cust-accrd--title resp_section_title" data-section-title=""&gt;
+        &lta href="#"&gt;Manage Sign-in Info &amp; Email Preferences&lt/a&gt;
+    &lt/h2&gt;
+    &ltarticle class="cust-accrd--content content clearfix" data-section-content=""&gt;
+    &lt!-- Accordion Content  --&gt;
+    &lt/article&gt;
 &lt/section&gt;</code>
 </pre>
 <hr>
 <pre>
-<code class="language-css">.prime-banner--section {
-    padding-left: 0;
-    padding-right: 0;
+<code class="language-css">.cust-accrd--section.cust-accrd--section__active {
+    margin: 0;
+    padding: 0;
 }
-.prime-banner--aside {
-    height: 0px;
+.cust-accrd--section.cust-accrd--section__active .cust-accrd--content__active{
+    display: block;
 }
-.prime-banner--figure {
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 10px;
+.cust-accrd--section .cust-accrd--content{
+    display: none;
 }
-.shoppingCart .prime-banner--aside {
-    height: 12px;
+.cust-accrd--title {
+    margin: 5.6px 0 0 0;
+}
+.cust-accrd--title>a {
+    width: 100%;
+    display: inline-block;
 }</code>
 </pre>
 <hr>
