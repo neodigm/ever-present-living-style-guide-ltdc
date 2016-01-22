@@ -7,23 +7,3 @@
         </p>
     </div>
 </section>
-<script>
-console.log("tabr1 ");
-$( document ).ready(function(){
-console.log("tabr2 "+"ready");
-    if( $("#myclipboard_summary").length === 1){
-console.log("tabr3 "+"myclip exists");
-        chrome.storage.local.get("myclipboard_summary", function(fetchedData){
-console.log("tabr4 "+"chromeStor callback");
-console.log("tabr5 fetch "+fetchedData["myclipboard_summary"]);
-            NotfChromeStor_value = fetchedData["myclipboard_summary"];
-            if( typeof NotfChromeStor_value === typeof undefined ){
-                $("#myclipboard_summary").html( "Report not available - re-run" );
-            }else{
-                $("#myclipboard_summary").html( NotfChromeStor_value );
-                $("pre code").addClass("language-markup");
-                Prism.highlightAll();
-            }
-        });
-    }
-</script>
