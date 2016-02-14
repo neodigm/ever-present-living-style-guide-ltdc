@@ -1,0 +1,29 @@
+										<!--
+										Integration Notes: To create your own custom Salesforce Web 2 Lead form (Article Submit).
+										Creeate three (3) new custom Lead fields:
+										Generate the W2L form:
+										Remove the LABLE elements and replace with placeholder attributes
+										Replace the BUTTON with an A element (see below)
+										-->
+										<form id="sfdc-w2l--form" target="_blank" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+											<input type=hidden name="oid" value="00D15000000EiXX">
+											<input type=hidden name="retURL" value="http://neodigm.github.io/ever-present-living-style-guide-site/article-submitted.html">
+											<section class="row">
+												<div class="columns small-6">
+													<input  id="first_name" maxlength="40" name="first_name" size="20" type="text" placeholder="First Name"/>
+												</div>
+												<div class="columns small-6">
+													<input  id="last_name" maxlength="80" name="last_name" size="20" type="text" placeholder="Last Name"/>
+												</div>
+											</section>
+											<input  id="00N1500000G2oUn" maxlength="80" name="00N1500000G2oUn" size="20" type="text" placeholder="Email"/>
+											<input  id="00N1500000G2oUs" maxlength="64" name="00N1500000G2oUs" size="20" type="text" placeholder="Article Title"/>
+											<textarea  id="00N1500000G2oV2" name="00N1500000G2oV2" type="text" wrap="soft"placeholder="Article Description"></textarea>
+											<input  id="00N1500000G2oV7" maxlength="255" name="00N1500000G2oV7" size="20" type="text" placeholder="Article Link"/>
+											<input  id="00N1500000GHBbf" class="sfdc-w2l--input__repo" maxlength="255" name="00N1500000GHBbf" size="20" type="hidden" placeholder="repo" value="http://neodigm.github.io/ever-present-living-style-guide-site"/>
+											<section class="row">
+												<div class="column small-12">
+													<a id="cmdSubmitAnArticle--form" class="button hollow expanded radius">Submit Article&nbsp; <i class="fa fa-check-circle-o fa-lg"></i></a>
+												</div>
+											</section>											
+										</form>
