@@ -187,31 +187,92 @@
     <div class="columns small-12">
 
 <pre>
-<code class="language-markup">&ltdiv id="owl-artc"&gt;
-    &ltdiv id="item_${loopStatus.count}" class="item respn_panl_wht panel"&gt;
-        &lta href='&ltc:out value="${articleUrl}" /&gt;'&gt;
-            &ltimg  src='&ltc:out value="${imageUrl}"/&gt;' alt=""&gt;
-            &ltp class="text-center artc_title"&gt;&ltdsp:valueof param="content.title"/&gt;&lt/p&gt;
-        &lt/a&gt;
-    &lt/div&gt;
-&lt/div&gt;</code>
+<code class="language-markup">&lta class="smi--fig" alt="Twitter"
+   href=""&gt;
+  &ltsvg class="smi--svg" viewBox="0 0 1792 1792" aria-labelledby="title"&gt;
+    &lttitle id="title"&gt;Twitter Tweet&lt/title&gt;
+    &ltuse class="" xlink:href="#smi--twt__default"&gt;&lt/use&gt;
+  &lt/svg&gt;
+&lt/a&gt;
+
+&lta class="smi--fig" alt="Pinterest Pin"
+   href=""&gt;
+  &ltsvg class="smi--svg" viewBox="0 0 1792 1792" aria-labelledby="title"&gt;
+    &lttitle id="title"&gt;Pinterest Pin&lt/title&gt;
+    &ltuse class="" xlink:href="#smi--ptp__default"&gt;&lt/use&gt;
+  &lt/svg&gt;
+&lt/a&gt;
+
+&lta class="smi--fig" alt="Google+ Plus"
+   href=""&gt;
+  &ltsvg class="smi--svg" viewBox="0 0 1792 1792" aria-labelledby="title"&gt;
+    &lttitle id="title"&gt;Google+ Plus&lt/title&gt;
+    &ltuse class="" xlink:href="#smi--ggp__default"&gt;&lt/use&gt;
+  &lt/svg&gt;
+&lt/a&gt;
+
+&lta class="smi--fig" alt="Facebook Like"
+   href=""&gt;
+  &ltsvg class="smi--svg" viewBox="0 0 1792 1792" aria-labelledby="title"&gt;
+    &lttitle id="title"&gt;Facebook Like&lt/title&gt;
+    &ltuse   xlink:href="#smi--fbl__default"&gt;&lt/use&gt;
+  &lt/svg&gt;
+&lt/a&gt;
+
+&lta class="smi--fig" alt="Facebook Share"
+   href=""&gt;
+  &ltsvg class="smi--svg" viewBox="0 0 1792 1792" aria-labelledby="title"&gt;
+    &lttitle id="title"&gt;Facebook Share&lt/title&gt;
+    &ltuse class="smi--use__default" xlink:href="#smi--fbs__default"&gt;&lt/use&gt;
+    &ltuse class="smi--use__hover"   xlink:href="#smi--fbs__hover"&gt;&lt/use&gt;
+  &lt/svg&gt;
+&lt/a&gt;
+
+&lta class="smi--fig" alt="RSS Feed"
+   href=""&gt;
+  &ltsvg class="smi--svg" viewBox="0 0 1792 1792" aria-labelledby="title"&gt;
+    &lttitle id="title"&gt;RSS Feed&lt/title&gt;
+    &ltuse class="" xlink:href="#smi--rss__default"&gt;&lt/use&gt;
+  &lt/svg&gt;
+&lt/a&gt;
+</code>
 </pre>
 <hr>
 <pre>
-<code class="language-css">.prime-banner--section {
-    padding-left: 0;
-    padding-right: 0;
+<code class="language-css">.smi--svg {
+  fill: #2BA6CB; /*branded*/
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
 }
-.prime-banner--aside {
-    height: 0px;
+.smi--svg:hover {fill: #297FB8;/*branded*/}
+
+.smi--fig {
+  float: left;
+  margin: 6px 10px 0 6px;
 }
-.prime-banner--figure {
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 10px;
+
+.smi--fig .smi--use__default {
+  display: block;
 }
-.shoppingCart .prime-banner--aside {
-    height: 12px;
+.smi--fig .smi--use__hover {
+  display: none;
+}
+.smi--fig:hover .smi--use__default {
+  display: none;
+}
+.smi--fig:hover .smi--use__hover {
+  display: block;
+}
+
+.resp_cf{
+    line-height: 0.2em;
+}
+.resp_cf:before,
+.resp_cf:after {
+    clear: both;
+    content: " ";
+    display: table;
 }</code>
 </pre>
 
