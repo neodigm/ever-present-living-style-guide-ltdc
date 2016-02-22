@@ -18,10 +18,8 @@
     <div class="columns small-12 medium-6 large-4">
         <p class="caption--p__roboto text-center">Reference</p>
         <hr>
-        <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#wai-aria" target="_blank"
-        class="button extended hollow">A11y</a>
-        <a href="https://css-tricks.com/bem-101/" target="_blank"
-        class="button extended hollow">BEM</a>
+        <a href="http://foundation.zurb.com/sites/docs/v/5.5.3/components/orbit.html" target="_blank"
+        class="button extended hollow">Orbit has been deprecated</a>
         <a href="http://www.accessiq.org/create/content/anatomy-of-an-accessible-carousel#develop" target="_blank"
         class="button extended hollow">OWL Carousel</a>
     </div>
@@ -35,32 +33,67 @@
 	<aside class="columns small-12">
 
 <pre>
-<code class="language-markup">&ltdiv id="owl-artc"&gt;
-    &ltdiv id="item_${loopStatus.count}" class="item respn_panl_wht panel"&gt;
-        &lta href='&ltc:out value="${articleUrl}" /&gt;'&gt;
-            &ltimg  src='&ltc:out value="${imageUrl}"/&gt;' alt=""&gt;
-            &ltp class="text-center artc_title"&gt;&ltdsp:valueof param="content.title"/&gt;&lt/p&gt;
-        &lt/a&gt;
-    &lt/div&gt;
-&lt/div&gt;</code>
+<code class="language-markup">&lt;div id="owl-artc"&gt;
+    &lt;div id="item_${loopStatus.count}" class="item respn_panl_wht panel"&gt;
+        &lt;a href='&lt;c:out value="${articleUrl}" /&gt;'&gt;
+            &lt;img  src='&lt;c:out value="${imageUrl}"/&gt;' alt=""&gt;
+            &lt;p class="text-center artc_title"&gt;&lt;dsp:valueof param="content.title"/&gt;&lt;/p&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
 </pre>
 <hr>
 <pre>
-<code class="language-css">.prime-banner--section {
-    padding-left: 0;
-    padding-right: 0;
-}
-.prime-banner--aside {
-    height: 0px;
-}
-.prime-banner--figure {
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 10px;
-}
-.shoppingCart .prime-banner--aside {
-    height: 12px;
-}</code>
+<code class="language-css"> #owl-artc.owl-carousel .artc_title {margin: 2px 0 3px;line-height: 120%;font-size: 0.7em;}
+   12: #owl-artc.owl-carousel .respn_panl_wht {padding-bottom: 0;}</code>
+</pre>
+<hr>
+<pre>
+<code class="language-js">$(document).ready(function() {
+  var owl = $("#owl-artc"), pImg = $("#caro_prev_img"), nImg = $("#caro_next_img");
+  owl.owlCarousel({
+      rewindNav: false,
+      addClassActive: true,
+      afterMove: owlMoved,
+      afterUpdate: owlMoved,
+      itemsDesktop: [1199,5],
+      itemsDesktopSmall: [979,5],
+      itemsTablet: [768,2],
+      itemsTabletSmall: [650,2],
+      itemsMobile: [479,2],
+      pagination: false
+  });
+  $(".togCaro").click(function(e) {
+    owlMoved();
+    $("#secCaro").toggleClass( "hide" );
+    $(".divCaro").toggleClass( "hide" );
+    $("#caroAll").toggleClass("caroAll_alt");
+    $("#respn_panl_reslt").toggleClass("respn_panl_reslt_alt");
+  });  
+  $(".next").click(function(){
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function(){
+    owl.trigger('owl.prev');
+  })
+  function owlMoved() { 
+    var owl = $("#owl-artc").data('owlCarousel');
+    if( $( "#item_1" ).parent().hasClass( "active" )){
+      $(pImg).attr("src", $(pImg).attr("src").replace('_e','_d'));
+      $(pImg).addClass('nav_arrw_d');
+    }else{
+      $(pImg).attr("src", $(pImg).attr("src").replace('_d','_e'));
+      $(pImg).removeClass('nav_arrw_d');
+    }
+    if($( "#item_"+owl.itemsAmount ).parent().hasClass( "active" )){
+      $(nImg).attr("src", $(nImg).attr("src").replace('_e','_d'));
+      $(nImg).addClass('nav_arrw_d');
+    }else{
+      $(nImg).attr("src", $(nImg).attr("src").replace('_d','_e'));
+      $(nImg).removeClass('nav_arrw_d');
+    }
+  }
+});</code>
 </pre>
 
 	</aside>
