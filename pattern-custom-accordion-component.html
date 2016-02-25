@@ -85,7 +85,31 @@ function moveSecTab(){
         var sWi = parseInt( $(".section-container.tabs section:nth-child(1n) .title").css("width"), 10);
         $(".section-container.tabs section:nth-child(2n) .title").css("left", (sWi-3)+"px");
     }
-}</code>
+}
+
+//  20151111 SCK ZF5 custom replacement for Sections component | accordion
+$(".cust-accrd--section").on("click", function(e){
+    if( $(e.target).is(".cust-accrd--title *") ){
+        e.stopPropagation();
+        if( !$(this).hasClass("cust-accrd--section__active") ){
+            $(".cust-accrd--section").removeClass("cust-accrd--section__active active").find(".cust-accrd--content").removeClass("cust-accrd--content__active active");
+        }
+        $(this).toggleClass("cust-accrd--section__active active").find(".cust-accrd--content").toggleClass("cust-accrd--content__active active");
+        if( $( this ).attr("aria-selected") === "true"){
+            $(this).attr({
+              "aria-selected": "false",
+              "aria-hidden": "true",
+              "aria-expanded": "false"
+            });
+        }else{
+            $(this).attr({
+              "aria-selected": "true",
+              "aria-hidden": "false",
+              "aria-expanded": "true"
+            });
+        }
+    }
+ });</code>
 </pre>
 
 
