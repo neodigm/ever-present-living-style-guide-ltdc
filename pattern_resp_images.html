@@ -88,6 +88,8 @@ function imageLoaded(image) {
 <template id="js-script">
 $("#js-srcsetgen--textarea__interchange").val( $("#js-sample-interchange__template").html() );
 $(".js-srcsetgen--a__copy").on("click", function(){
+    var eSyntax = document.querySelector("#js-srcsetgen--textarea__srcset");  
+    eSyntax.select();
     console.log("clip copy | " + document.execCommand('copy') );
 });
 </template>
