@@ -50,7 +50,7 @@
     <article class="columns small-12 medium-4">
         <textarea id="js-srcsetgen--textarea__srcset" class="js-srcsetgen--textarea" placeholder="SRCSET / Size syntax"
         rows="4" cols="48"></textarea>
-        <a class="button small extended hollow">Copy</a>
+        <a class="js-srcsetgen--a__copy button small extended hollow">Copy</a>
     </article>
 </section>
 
@@ -87,5 +87,8 @@ function imageLoaded(image) {
 </template>
 <template id="js-script">
 $("#js-srcsetgen--textarea__interchange").val( $("#js-sample-interchange__template").html() );
+$(".js-srcsetgen--a__copy").on("click", function(){
+    console.log("clip copy | " + document.execCommand('copy') );
+});
 </template>
 </section>
