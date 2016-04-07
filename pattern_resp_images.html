@@ -62,41 +62,28 @@
     </div>
 	<aside class="columns small-12">
 <pre>
-<code class="language-markup">&ltsection    class="prime-banner--section row" role="banner"&gt;
-    &ltaside   class="prime-banner--aside columns small-10"&gt; &lt/aside&gt;
-    &ltfigure  class="prime-banner--figure columns small-10"
-    aria-label="Primary Banner"&gt;
-         &lt!-- Content Begin --&gt;
-         &ltimg class="prime-banner--img" src="" alt="" title=""&gt;
-         &lt!-- Content End   --&gt;
-    &lt/figure&gt;
-&lt/section&gt;</code>
+<code class="language-javascript">$(document).on('replace', 'img', function (e, new_path, original_path) {
+    console.groupCollapsed("intrch |");
+        console.log(e.currentTarget);
+        console.log(new_path);
+        console.log(original_path);
+    console.groupEnd();
+});
+$("img").on("load", function(){
+    imageLoaded( this );
+});
+function imageLoaded(image) {
+    if(image.src !== image.currentSrc){
+        console.groupCollapsed("imgload |");
+            console.log("img.src        | " + image.src);
+            console.log("img.currentSrc | " + image.currentSrc);
+            console.log("img.NaturalDim | w:" + image.naturalWidth + " h:" + image.naturalHeight );
+        console.groupEnd();
+    }
+}</code>
 </pre>
-<hr>
-<pre>
-<code class="language-css">.prime-banner--section {
-    padding-left: 0;
-    padding-right: 0;
-}
-.prime-banner--aside {
-    height: 0px;
-}
-.prime-banner--figure {
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 10px;
-}
-.shoppingCart           .prime-banner--aside { height: 12px; }
-#onePageCheckout        .prime-banner--aside { height: 12px; }
-.orderConfirm           .prime-banner--aside { height: 12px; }
-.signin                 .prime-banner--aside { height: 12px; }
-.catalogQuickOrder      .prime-banner--aside { height: 12px; }
-.checkout--order-commit .prime-banner--aside { height: 12px; }</code>
-</pre>
-
 	</aside>
-<template id="js-sample-interchange__template">
-<img class="item-img" border="0" alt="Moroccan Lattice Accent Stools" data-interchange="[http://media.ltdcommodities.com/images/product/53183_mn.jpg, (small)], [http://media.ltdcommodities.com/images/product/53183_th.jpg, (medium)], [http://media.ltdcommodities.com/images/product/53183_mn.jpg, (large)]" data-uuid="interchange-imlcxog63w" src="http://media.ltdcommodities.com/images/product/53183_mn.jpg">
+<template id="js-sample-interchange__template"><img class="item-img" border="0" alt="Moroccan Lattice Accent Stools" data-interchange="[http://media.ltdcommodities.com/images/product/53183_mn.jpg, (small)], [http://media.ltdcommodities.com/images/product/53183_th.jpg, (medium)], [http://media.ltdcommodities.com/images/product/53183_mn.jpg, (large)]" data-uuid="interchange-imlcxog63w" src="http://media.ltdcommodities.com/images/product/53183_mn.jpg">
 </template>
 <template id="js-script">
 $("#js-srcsetgen--textarea__interchange").val( $("#js-sample-interchange__template").html() );
