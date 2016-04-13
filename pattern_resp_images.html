@@ -106,12 +106,23 @@ $(".js-srcsetgen--a__copy").on("click", function(){
 $(".js-srcsetgen--a__gen").on("click", function(){
 //    populate js-imgcand--div from js-imgcand--template
 var aImgCand = [];
-aImgCand.push({"target": "url", "source": "http"});
-aImgCand.push({"target": "nat_w", "source": "590"});
-aImgCand.push({"target": "nat_h", "source": "720"});
+aImgCand = getImgURLfromIC( $("#js-srcsetgen--textarea__interchange").val() );
+//aImgCand.push({"target": "url", "source": "http"});
+//aImgCand.push({"target": "nat_w", "source": "590"});
+//aImgCand.push({"target": "nat_h", "source": "720"});
 $("#js-imgcand--div").html( $("#js-imgcand--div").html() + popuTemplate("js-imgcand--template", aImgCand ) );
-    
 });
+function getImgURLfromIC( sICSyntax ){
+    aImg = sICSyntax.split("[");
+    if( aImg.length > 0){
+        aOut = [];
+        for(var nCnt=0;nCnt <= aImg.length;nCnt++){
+            aOut.push({"source" : aImg[nCnt], "target" : "url"});
+        }
+        return sOut;
+    }
+    return false;
+}
 function popuTemplate(sTemplate_id, aContents){
     if( aContents.length > 0){
         var $oTempl = $("#" + sTemplate_id);
