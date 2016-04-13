@@ -34,16 +34,20 @@
 </section>
 <section class="row">
     <article class="columns small-12 medium-4">
-        <textarea id="js-srcsetgen--textarea__interchange" class="js-srcsetgen--textarea" placeholder="Paste Interchange Element (client)"
+        <textarea id="js-srcsetgen--textarea__interchange" class="js-srcsetgen--textarea" placeholder="Paste Interchange Element (client script)"
         rows="4" cols="48"></textarea>
-        <a class="button small extended hollow">Generate SRCSET</a>
+        <a class="js-srcsetgen--a__gen button small extended hollow">Generate SRCSET</a>
+
     </article>
     <article class="columns small-12 medium-4">
 
         <section class="row">
             <aside class="columns small-12 callout success">
-            ZZZZ
+            <h2 class="">Image Candidate(s)</h2>
             </aside>
+            <div id="js-imgcand--div">
+
+            </div>
         </section>
         
     </article>
@@ -91,6 +95,10 @@ $(".js-srcsetgen--a__copy").on("click", function(){
     var eSyntax = document.querySelector("#js-srcsetgen--textarea__srcset");  
     eSyntax.select();
     console.log("clip copy | " + document.execCommand('copy') );
+});
+$(".js-srcsetgen--a__gen").on("click", function(){
+//    populate js-imgcand--div
+    
 });
 </template>
 </section>
