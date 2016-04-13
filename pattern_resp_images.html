@@ -110,13 +110,14 @@ aImgCand = getImgURLfromIC( $("#js-srcsetgen--textarea__interchange").val() );
 //aImgCand.push({"target": "url", "source": "http"});
 //aImgCand.push({"target": "nat_w", "source": "590"});
 //aImgCand.push({"target": "nat_h", "source": "720"});
-$("#js-imgcand--div").html( $("#js-imgcand--div").html() + popuTemplate("js-imgcand--template", aImgCand ) );
+$("#js-imgcand--div").html( $("#js-imgcand--div").html() + popuTemplate("js-imgcand--template", getImgURLfromIC( $("#js-srcsetgen--textarea__interchange").val() ) );
 });
 function getImgURLfromIC( sICSyntax ){
     aImg = sICSyntax.split("[");
     if( aImg.length > 0){
         aOut = [];
         for(var nCnt=0;nCnt <= aImg.length;nCnt++){
+console.log(" aImg | "+aImg[nCnt]);
             aOut.push({"source" : aImg[nCnt], "target" : "url"});
         }
         return aOut;
