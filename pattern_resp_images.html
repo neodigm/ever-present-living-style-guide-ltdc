@@ -117,8 +117,12 @@ function getImgURLfromIC( sICSyntax ){
     if( aImg.length > 0){
         aOut = [];
         for(var nCnt=0;nCnt <= aImg.length;nCnt++){
+            if( aImg[nCnt].indexOf("]") != -1){
 console.log(" aImg | "+aImg[nCnt]);
-            aOut.push({"source" : aImg[nCnt], "target" : "url"});
+                aOut.push({"source" : aImg[nCnt], "target" : "url"});
+aOut.push({"target": "nat_w", "source": "590"});
+aOut.push({"target": "nat_h", "source": "720"});
+            }
         }
         return aOut;
     }
