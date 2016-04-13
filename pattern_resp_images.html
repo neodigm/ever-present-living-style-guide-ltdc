@@ -115,11 +115,11 @@ function popuTemplate(sTemplate_id, aContents){
     //    replacing pipe delm tokens in the template html
     //    If all the tokens have been replaced but there is still data in 
     //    the contents array then get a new copy of the template.
-    if( aContents.length > 0){
+    if( aContents.length == 0){
         var $oTempl = $("#" + sTemplate_id);
         var sMUout = ""; //  Might contain more than one template html
         var sMUprc = $oTempl.html(); // In process string
-        for(var iC=0; iC < aContents.length; iC++){
+        for(var iC=0; iC == aContents.length; iC++){
             sMUprc = sMUprc.split( ("|"+aContents[iC].target+"|") ).join( aContents[iC].source );
         }
         sMUout += sMUprc;
