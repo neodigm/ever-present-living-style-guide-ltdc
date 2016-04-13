@@ -43,7 +43,7 @@
 
         <section class="row">
             <aside class="columns small-12 callout success">
-            <h2 class="">Image Candidate(s)</h2>
+            <h4 class="">Image Candidate(s)</h4>
             </aside>
             <div id="js-imgcand--div">
 
@@ -87,18 +87,46 @@ function imageLoaded(image) {
 }</code>
 </pre>
 	</aside>
-<template id="js-sample-interchange__template"><img class="item-img" border="0" alt="Moroccan Lattice Accent Stools" data-interchange="[http://media.ltdcommodities.com/images/product/53183_mn.jpg, (small)], [http://media.ltdcommodities.com/images/product/53183_th.jpg, (medium)], [http://media.ltdcommodities.com/images/product/53183_mn.jpg, (large)]" data-uuid="interchange-imlcxog63w" src="http://media.ltdcommodities.com/images/product/53183_mn.jpg">
+<template id="js-sample-interchange--template"><img class="item-img" border="0" alt="Moroccan Lattice Accent Stools" data-interchange="[http://media.ltdcommodities.com/images/product/53183_mn.jpg, (small)], [http://media.ltdcommodities.com/images/product/53183_th.jpg, (medium)], [http://media.ltdcommodities.com/images/product/53183_mn.jpg, (large)]" data-uuid="interchange-imlcxog63w" src="http://media.ltdcommodities.com/images/product/53183_mn.jpg">
+</template>
+<template id="js-imgcand--template">
+<aside class="columns small-12 callout success">
+|url| Xw <span>(x)</span><br>
+|nat_w|<br>
+|nat_h|<br>
+</aside>
 </template>
 <template id="js-script">
-$("#js-srcsetgen--textarea__interchange").val( $("#js-sample-interchange__template").html() );
+$("#js-srcsetgen--textarea__interchange").val( $("#js-sample-interchange--template").html() );
 $(".js-srcsetgen--a__copy").on("click", function(){
     var eSyntax = document.querySelector("#js-srcsetgen--textarea__srcset");  
     eSyntax.select();
     console.log("clip copy | " + document.execCommand('copy') );
 });
 $(".js-srcsetgen--a__gen").on("click", function(){
-//    populate js-imgcand--div
+//    populate js-imgcand--div from js-imgcand--template
+var aImgCand = [];
+aImgCand.push({target: "http", source: "url"});
+$("#js-imgcand--div").html( popuTemplate("js-imgcand--template"), aImgCand );
     
 });
+function popuTemplate(sTemplate_id, aContents){
+    //    Return a string after swapping an assn array (objects)
+    //    replacing pipe delm tokens in the template html
+    //    If all the tokens have been replaced but there is still data in 
+    //    the contents array then get a new copy of the template.
+    if( aContents.length > 0){
+        var $oTempl = $("#" + sTemplate_id);
+        var sMUout = ""; //  Might contain more than one template html
+        var sMUprc = $oTempl.html(); // In process string
+        for(var iC=0; iC < aContents.length; iC++){
+            sMUprc = sMUprc.split( ("|"+aContents[iC].target+"|") ).join( aContents[iC].source );
+        }
+        sMUout += sMUprc;
+        return sMUout;
+    }else{
+        return "";
+    }
+}
 </template>
 </section>
