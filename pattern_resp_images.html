@@ -116,7 +116,7 @@ function getImgURLfromIC( sICSyntax ){
     aImg = sICSyntax.split("[");
     if( aImg.length > 0){
         aOut = [];
-        for(var nCnt=0;nCnt <= aImg.length;nCnt++){
+        for(var nCnt=0;nCnt < aImg.length;nCnt++){
             if( aImg[nCnt].indexOf("]") != -1){
 console.log(" aImg | "+aImg[nCnt]);
                 aOut.push({"source" : aImg[nCnt], "target" : "url"});
