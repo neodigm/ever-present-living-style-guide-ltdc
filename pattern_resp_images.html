@@ -106,9 +106,9 @@ $(".js-srcsetgen--a__copy").on("click", function(){
 $(".js-srcsetgen--a__gen").on("click", function(){
 //    populate js-imgcand--div from js-imgcand--template
 var aImgCand = [];
-aImgCand.push({"target": "http", "source": "url"});
-aImgCand.push({"target": "590", "source": "nat_w"});
-aImgCand.push({"target": "720", "source": "nat_h"});
+aImgCand.push({"target": "url", "source": "http"});
+aImgCand.push({"target": "nat_w", "source": "590"});
+aImgCand.push({"target": "nat_h", "source": "720"});
 $("#js-imgcand--div").html( $("#js-imgcand--div").html() + popuTemplate("js-imgcand--template", aImgCand ) );
     
 });
