@@ -107,7 +107,7 @@ $(".js-srcsetgen--a__gen").on("click", function(){
 //    populate js-imgcand--div from js-imgcand--template
 var aImgCand = [];
 aImgCand.push({target: "http", source: "url"});
-$("#js-imgcand--div").html( popuTemplate("js-imgcand--template"), aImgCand ));
+$("#js-imgcand--div").html( popuTemplate("js-imgcand--template", aImgCand ) );
     
 });
 function popuTemplate(sTemplate_id, aContents){
