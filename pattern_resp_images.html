@@ -119,7 +119,7 @@ function getImgURLfromIC( sICSyntax ){
         for(var nCnt=0;nCnt < aImg.length;nCnt++){
             if( aImg[nCnt].indexOf("]") != -1){
                 aImg[nCnt] = aImg[nCnt].split(",")[0];
-console.log(" aImg | "+aImg[nCnt]);
+console.log(" aImg 2 | "+aImg[nCnt]);
                 aOut.push({"source" : aImg[nCnt], "target" : "url"});
             }
         }
