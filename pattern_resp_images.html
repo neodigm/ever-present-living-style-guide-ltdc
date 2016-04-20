@@ -105,6 +105,7 @@ $(".js-srcsetgen--a__copy").on("click", function(){
     eSyntax.select();
     console.log("clip copy | " + document.execCommand('copy') );
 });
+
 $(".js-srcsetgen--a__gen").on("click", function(){
 //    populate js-imgcand--div from js-imgcand--template
 var aImgCand = [];
@@ -131,8 +132,12 @@ function popuTemplate(sTemplate_id, aContents){
         var $oTempl = $("#" + sTemplate_id);
         var sMUout = ""; //  Might contain more than one template html
         var sMUprc = $oTempl.html(); // In process string
-        for(var iC=0; iC < aContents.length; iC++){
-            sMUprc = sMUprc.split( ("|"+aContents[iC].target+"|") ).join( aContents[iC].source );
+        for(var iC=0; iC < aContents.length; iC++){     
+            if( sMUprc.indexOf("|") <= 0){
+                sMUout += sMUprc;
+                sMUprc = $oTempl.html();
+            }
+            sMUprc = sMUprc.replace(("|"+aContents[iC].target+"|"), aContents[iC].source);
         }
         sMUout += sMUprc;
         return sMUout;
@@ -140,5 +145,6 @@ function popuTemplate(sTemplate_id, aContents){
         return "";
     }
 }
+
 </template>
 </section>
