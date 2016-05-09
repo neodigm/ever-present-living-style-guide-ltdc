@@ -98,9 +98,6 @@
 <template id="js-script">
 function findAll(sel) { return [].slice.call(document.querySelectorAll(sel)); }
 function find(sel) { return document.querySelector(sel); }
-function validate(form) {
-    return find("#js--input__url").value && find("#js--input__password").value;
-}
 function generatePassword(len) {
     return PassHashCommon.generateHashWord(
         find('#js--input__url').value,
