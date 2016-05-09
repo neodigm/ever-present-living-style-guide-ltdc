@@ -1,0 +1,150 @@
+<section class="row">
+    <div class="columns small-12">
+        <p class="caption--p__roboto text-center">Pattern: Input Type Sandbox</p>
+        <hr>
+    </div>
+</section>
+<section class="row">
+    <div class="columns small-12 medium-12 large-4">
+        <p class="caption--p__roboto text-center">Problem</p>
+        <hr>
+        <p class="article--p__roboto text-center">As the use of smartphones (and their onscreen keyboards) has flourished, the input type has taken on a new and incredibly important role in how people interact with the web.</p>
+    </div>
+    <div class="columns small-12 medium-6 large-4">
+        <p class="caption--p__roboto text-center">Solution</p>
+        <hr>
+        <p class="article--p__roboto text-center">What we needed was a way to test the near-infinite combination of input types, validation patterns and attributes across any device, OS or browser, to see how onscreen keyboards and HTML5 validation behaviors would react.</p>
+    </div>
+    <div class="columns small-12 medium-6 large-4">
+        <p class="caption--p__roboto text-center">Reference</p>
+        <hr>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank"
+        class="button extended hollow">HTML5 INPUT</a>
+    </div>
+</section>
+
+<section class="row">
+    <br>
+    <div class="columns small-12 medium-12">
+        <p class="caption--p__roboto text-center">Generate SRCSET syntax from Interchange element</p>
+    </div>
+    <hr>
+</section>
+<section class="row">
+    <article class="columns small-12 medium-4">
+        <textarea id="js-srcsetgen--textarea__interchange" class="js-srcsetgen--textarea" placeholder="Paste Interchange Element (client script)"
+        rows="4" cols="48"></textarea>
+        <a class="js-srcsetgen--a__gen button small extended hollow">Generate SRCSET</a>
+
+    </article>
+    <article class="columns small-12 medium-4">
+
+        <section class="row">
+            <aside class="columns small-12 callout success">
+            <h4 class="">Image Candidate(s)</h4>
+            </aside>
+            <div id="js-imgcand--div">
+
+            </div>
+        </section>
+        
+    </article>
+    <article class="columns small-12 medium-4">
+        <textarea id="js-srcsetgen--textarea__srcset" class="js-srcsetgen--textarea" placeholder="SRCSET / Size syntax"
+        rows="4" cols="48"></textarea>
+        <a class="js-srcsetgen--a__copy button small extended hollow">Copy</a>
+    </article>
+</section>
+
+<section class="row">
+	<aside class="columns small-12">
+<pre>
+<code class="language-html">&lt;div class="small-3 columns ensemble-quantity"&gt;
+&lt;c:choose&gt;
+    &lt;c:when
+        test="${availability != null && SKUsoldOut == 'false'}"&gt;
+        &lt;dsp:input
+            bean="CartModifierFormHandler.items[param:skuIndex].quantity"
+            maxlength="3" type="tel"
+            value="${defaultQuantityValue}"
+            onfocus="clearQuantityInput($(this));"
+            id="quantity_${skuId}"
+            onblur="cleanQuantityInput($(this), '${defaultQuantityValue}')"
+            onkeydown="return killEnter(event);"
+            onkeypress="return isNumeric(event);"
+            iclass="PinNumber${currentPin} qtyFld radius" /&gt;
+    &lt;/c:when&gt;
+    &lt;c:otherwise&gt;
+        &lt;dsp:input
+            bean="CartModifierFormHandler.items[param:skuIndex].quantity"
+            maxlength="3" type="tel" id="quantity_${skuId}"
+            value="0"
+            iclass="PinNumber${currentPin} qtyFld radius"
+            disabled="true" /&gt;
+    &lt;/c:otherwise&gt;
+&lt;/c:choose&gt;
+&lt;input type="hidden" name="skuNumFld"
+    value="&lt;c:out value='${skuId}'/&gt;" /&gt;
+&lt;/div&gt;</code>
+</pre>
+	</aside>
+<template id="js-sample-interchange--template"><img class="item-img" border="0" alt="Moroccan Lattice Accent Stools" data-interchange="[http://media.ltdcommodities.com/images/product/53183_mn.jpg, (small)], [http://media.ltdcommodities.com/images/product/53183_th.jpg, (medium)], [http://media.ltdcommodities.com/images/product/53183_mn.jpg, (large)]" data-uuid="interchange-imlcxog63w" src="http://media.ltdcommodities.com/images/product/53183_mn.jpg">
+</template>
+<template id="js-imgcand--template">
+<aside class="columns small-12 callout success">
+|url| Xw <span>(x)</span><br>
+|nat_w|<br>
+|nat_h|<br>
+</aside>
+</template>
+<template id="js-script">
+$("#js-srcsetgen--textarea__interchange").val( $("#js-sample-interchange--template").html() );
+$(".js-srcsetgen--a__copy").on("click", function(){
+    var eSyntax = document.querySelector("#js-srcsetgen--textarea__srcset");  
+    eSyntax.select();
+    console.log("clip copy | " + document.execCommand('copy') );
+});
+
+$(".js-srcsetgen--a__gen").on("click", function(){
+//    populate js-imgcand--div from js-imgcand--template
+var aImgCand = [];
+aImgCand = getImgURLfromIC( $("#js-srcsetgen--textarea__interchange").val() );
+$("#js-imgcand--div").html( $("#js-imgcand--div").html() + popuTemplate("js-imgcand--template", aImgCand ));
+});
+function getImgURLfromIC( sICSyntax ){
+    aImg = sICSyntax.split("[");
+    if( aImg.length > 0){
+        aOut = [];
+        for(var nCnt=0;nCnt < aImg.length;nCnt++){
+            if( aImg[nCnt].indexOf("]") != -1){
+                aImg[nCnt] = aImg[nCnt].split(",")[0];
+console.log(" aImg 2 | "+aImg[nCnt]);
+                aOut.push({"source" : aImg[nCnt], "target" : "url"});
+            }
+        }
+console.log(" aImg 2 cnt | "+aImg.length);
+        return aOut;
+    }
+    return false;
+}
+function popuTemplate(sTemplate_id, aContents){
+    if( aContents.length > 0){
+        var $oTempl = $("#" + sTemplate_id);
+        var sMUout = ""; //  Might contain more than one template html
+        var sMUprc = $oTempl.html(); // In process string
+        for(var iC=0; iC < aContents.length; iC++){     
+            if( sMUprc.indexOf("|") <= 0){
+                sMUout += sMUprc;
+                sMUprc = $oTempl.html();
+            }
+            sMUprc = sMUprc.replace(("|"+aContents[iC].target+"|"), aContents[iC].source);
+        }
+        sMUout += sMUprc;
+        return sMUout;
+    }else{
+        return "";
+    }
+}
+
+</template>
+</section>
