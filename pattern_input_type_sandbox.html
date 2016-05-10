@@ -97,7 +97,8 @@
 
 <template id="js-script">
 function generatePassword( nLen ) {
-    var sDh = hashThis( $('#js--input__url').val() + "|" + $('#js--input__password').val() );
+    var sDh = $('#js--input__url').val() + "|" + $('#js--input__password').val();
+    sDh = hashThis( sDh.toLowerCase() );
     return sDh.substr(sDh.length - nLen);
 }
 
