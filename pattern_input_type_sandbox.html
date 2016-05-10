@@ -96,14 +96,10 @@
 	</aside>
 
 <template id="js-script">
-	console.log( "stuff" );
-function findAll(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-function find(sel) { return document.querySelector(sel); }
+alert( hashThis( "sIn" ) );
 function generatePassword(len) {
     return PassHashCommon.generateHashWord(
-        find('#js--input__url').value,
-        find('#js--input__password').value,
-        len,true,false,true,true,false
+        return $('#js--input__url').val() + "|" + $('#js--input__password').val();
     );
 }
 
