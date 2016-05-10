@@ -97,16 +97,20 @@
 
 <template id="js-script">
 console.log( hashThis( "sIn" ) );
-function generatePassword(len) {
-    return $('#js--input__url').val() + "|" + $('#js--input__password').val();
+var nLen = 12;
+if( $("#js--input__number").val() !== "" ){
+	nLen = $("#js--input__number").val();
+}
+function generatePassword( nLen ) {
+    return hashThis( $('#js--input__url').val() + "|" + $('#js--input__password').val() );
 }
 
 $("#js--input__password").on("blur", function(){
-    $("#js--input__number").val( generatePassword( 12 ) );
-    var eSyntax = document.querySelector("#js--input__number");  
+    $("#js--input__search").val( generatePassword( nLen ) );
+    var eSyntax = document.querySelector("#js--input__search");  
     eSyntax.select();
     console.log("clip copy | " + document.execCommand('copy') );
-    $("#js--input__number").val("1234567890");
+    $("#js--input__number").val("Search");
     var eSyntax = document.querySelector("#js--input__number");  
     eSyntax.select();
 });
