@@ -8,7 +8,7 @@
     <div class="columns small-12 medium-12 large-4">
         <p class="caption--p__roboto text-center">Problem</p>
         <hr>
-        <p class="article--p__roboto text-center">4444As the use of smartphones (and their onscreen keyboards) has flourished, the input type has taken on a new and incredibly important role in how people interact with the web.</p>
+        <p class="article--p__roboto text-center">5555 As the use of smartphones (and their onscreen keyboards) has flourished, the input type has taken on a new and incredibly important role in how people interact with the web.</p>
     </div>
     <div class="columns small-12 medium-6 large-4">
         <p class="caption--p__roboto text-center">Solution</p>
@@ -102,7 +102,7 @@ if( $("#js--input__number").val() !== "" ){
 	nLen = $("#js--input__number").val();
 }
 function generatePassword( nLen ) {
-    return hashThis( $('#js--input__url').val() + "|" + $('#js--input__password').val() );
+    return hashThis( $('#js--input__url').val() + "|" + $('#js--input__password').val() ).substr(id.length - nLen);
 }
 
 $("#js--input__password").on("blur", function(){
