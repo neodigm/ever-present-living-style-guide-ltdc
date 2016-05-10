@@ -8,7 +8,7 @@
     <div class="columns small-12 medium-12 large-4">
         <p class="caption--p__roboto text-center">Problem</p>
         <hr>
-        <p class="article--p__roboto text-center">6666 As the use of smartphones (and their onscreen keyboards) has flourished, the input type has taken on a new and incredibly important role in how people interact with the web.</p>
+        <p class="article--p__roboto text-center">7777 As the use of smartphones (and their onscreen keyboards) has flourished, the input type has taken on a new and incredibly important role in how people interact with the web.</p>
     </div>
     <div class="columns small-12 medium-6 large-4">
         <p class="caption--p__roboto text-center">Solution</p>
@@ -45,7 +45,7 @@
     <article class="columns small-12 medium-4">
 
         <input id="js--input__number" class ="js--input"
-        type="TEXT" placeholder="Number">
+        type="TEXT" placeholder="Number" value="Number">
         <hr>
         <input id="js--input__email" class ="js--input"
         type="email" placeholder="Email Address">
@@ -96,9 +96,8 @@
 	</aside>
 
 <template id="js-script">
-console.log( hashThis( "sIn" ) );
 var nLen = 12;
-if( $("#js--input__number").val() !== "" ){
+if( $("#js--input__number").val() !== "Number" ){
 	nLen = $("#js--input__number").val();
 }
 function generatePassword( nLen ) {
