@@ -100,9 +100,11 @@ function generatePassword( nLen ) {
      $('#js--input__url').val(extractDomain(  $('#js--input__url').val() ));
     var sDh = $('#js--input__url').val() + "|" + $('#js--input__password').val();
     sDh = hashThis( sDh.toLowerCase() );
-    return sDh.substr(sDh.length - nLen);
+    return capitalizeFirstLetter( sDh.substr(sDh.length - nLen) );
 }
-
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 $("#js--input__password").on("blur", function(){
 	var nLen = 12;
 	if( $("#js--input__number").val() !== "" ){
