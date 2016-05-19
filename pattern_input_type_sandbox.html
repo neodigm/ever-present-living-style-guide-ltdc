@@ -102,6 +102,7 @@ function generatePassword( nLen ) {
     sDh = hashThis( sDh.toLowerCase() );
     return ucaseFirstAlpha( sDh.substr(sDh.length - nLen) );
 }
+
 function ucaseFirstAlpha( sIn ){
     var sOut ="";
     var bA = false;
