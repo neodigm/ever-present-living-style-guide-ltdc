@@ -100,23 +100,7 @@ function generatePassword( nLen ) {
      $('#js--input__url').val(extractDomain(  $('#js--input__url').val() ));
     var sDh = $('#js--input__url').val() + "|" + $('#js--input__password').val();
     sDh = hashThis( sDh.toLowerCase() );
-    return ucaseFirstAlpha( sDh.substr(sDh.length - nLen) );
-}
-function ucaseFirstAlpha( sIn ){
-    var sOut ="";
-    var bA = false;
-    for(var nCnt=0; nCnt < sIn.length; nCnt++){
-        if( !bA && isAlpha( sIn[nCnt] ) ){
-            sOut+=sIn[nCnt].toUpperCase();
-            bA = true;
-        }else{
-            sOut+=sIn[nCnt];
-        }
-    }
-    return sOut;
-}
-function isAlpha(str) {
-  return /^[a-zA-Z]+$/.test(str);
+    return sDh.substr(sDh.length - nLen);
 }
 $("#js--input__password").on("blur", function(){
 	var nLen = 12;
