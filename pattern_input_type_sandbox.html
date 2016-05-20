@@ -63,7 +63,7 @@
 </section>
 
 <section class="row">
-	<aside class="columns small-12">
+    <aside class="columns small-12">
 <pre>
 <code class="language-html">&lt;div class="small-3 columns ensemble-quantity"&gt;
 &lt;c:choose&gt;
@@ -93,15 +93,14 @@
     value="&lt;c:out value='${skuId}'/&gt;" /&gt;
 &lt;/div&gt;</code>
 </pre>
-	</aside>
+    </aside>
 
 <template id="js-script">
 function generatePassword( nLen ) {
      $('#js--input__url').val(extractDomain(  $('#js--input__url').val() ));
     var sDh = $('#js--input__url').val() + "|" + $('#js--input__password').val();
     sDh = hashThis( sDh.toLowerCase() );
-console.log("printf deb| "+1);
-    return  sDh.substr(sDh.length - nLen);
+    return ucaseFirstAlpha( sDh.substr(sDh.length - nLen) );
 }
 function ucaseFirstAlpha( sIn ){
     var sOut ="";
@@ -117,13 +116,13 @@ function ucaseFirstAlpha( sIn ){
     return sOut;
 }
 function isAlpha(str) {
-  return false;
+  return /^[a-zA-Z]+$/.test(str);
 }
 $("#js--input__password").on("blur", function(){
-	var nLen = 12;
-	if( $("#js--input__number").val() !== "" ){
-		nLen = $("#js--input__number").val();
-	}
+    var nLen = 12;
+    if( $("#js--input__number").val() !== "" ){
+        nLen = $("#js--input__number").val();
+    }
     $("#js--input__search").val( generatePassword( nLen ) );
     var eSyntax = document.querySelector("#js--input__search");  
     eSyntax.select();
@@ -133,10 +132,10 @@ $("#js--input__password").on("blur", function(){
     //eSyntax.select();
 });
 function hashThis( sIn ){
-	var shaObj = new jsSHA("SHA-256", "TEXT");
-	shaObj.setHMACKey("eplsg", "TEXT");
-	shaObj.update( sIn );
-	return shaObj.getHMAC("HEX");
+    var shaObj = new jsSHA("SHA-256", "TEXT");
+    shaObj.setHMACKey("eplsg", "TEXT");
+    shaObj.update( sIn );
+    return shaObj.getHMAC("HEX");
 }
 function extractDomain(url) {
     var domain;
