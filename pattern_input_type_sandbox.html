@@ -106,9 +106,13 @@ function ucaseFirstAlpha( sIn ){
     var sOut ="";
     var bA = false;
     for(var nCnt=0; nCnt < sIn.length; nCnt++){
-        if( (!bA) && (isAlpha( sIn[nCnt] )) ){
-            sOut+=sIn[nCnt].toUpperCase();
-            bA = true;
+        if( isAlpha( sIn[nCnt] ) ){
+            if( !bA ){
+                sOut+=sIn[nCnt].toUpperCase();
+                bA = true;
+            }else{
+                sOut+=sIn[nCnt];
+            }
         }else{
             sOut+=sIn[nCnt];
         }
