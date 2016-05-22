@@ -95,7 +95,7 @@
 </pre>
     </aside>
 
-<template id="js-script">  
+<template id="js-script">
 function generatePassword( nLen ) {
      $('#js--input__url').val(extractDomain(  $('#js--input__url').val() ));
     var sDh = $('#js--input__url').val() + "|" + $('#js--input__password').val();
@@ -103,7 +103,17 @@ function generatePassword( nLen ) {
     return ucaseFirstAlpha( sDh.substr(sDh.length - nLen) );
 }
 function ucaseFirstAlpha( sIn ){
-    return sIn;
+    var sOut ="";
+    var bA = false;
+    for(var nCnt=0; nCnt < sIn.length; nCnt++){
+        if( !bA && isAlpha( sIn[nCnt] ) ){
+            sOut+=sIn[nCnt].toUpperCase();
+            bA = true;
+        }else{
+            sOut+=sIn[nCnt];
+        }
+    }
+    return sOut;
 }
 function isAlpha(str) {
   return true;
