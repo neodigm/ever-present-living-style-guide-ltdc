@@ -132,8 +132,7 @@ $("#js--input__password").on("blur", function(){
     eSyntax.select();
     console.log("clip copy | " + document.execCommand('copy') );
     $("#js--input__search").val("");
-    //var eSyntax = document.querySelector("#js--input__number");  
-    //eSyntax.select();
+    $("#js--input__password").val("javascript");
 });
 function hashThis( sIn ){
     var shaObj = new jsSHA("SHA-256", "TEXT");
