@@ -106,16 +106,17 @@ function ucaseFirstAlpha( sIn ){
     var sOut ="";
     var bA = false;
     for(var nCnt=0; nCnt < sIn.length; nCnt++){
-        if( !bA && isAlpha( sIn[nCnt] ) ){
-
+        if( isAlpha( sIn[nCnt] ) ){
+            sOut+=sIn[nCnt].toUpperCase();
+            bA = true;
         }else{
-
+            sOut+=sIn[nCnt];
         }
     }
     return sOut;
 }
 function isAlpha(str) {
-  return true;
+  return /^[a-zA-Z]+$/.test(str);
 }
 $("#js--input__password").on("blur", function(){
     var nLen = 12;
