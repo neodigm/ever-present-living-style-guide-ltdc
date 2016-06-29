@@ -1,6 +1,6 @@
 <section class="row">
     <div class="columns small-12">
-        <p class="caption--p__roboto text-center"> <span id="js-content--span">0</span> Tealiumiq Badges Tealium IQ Badges</p>
+        <p class="caption--p__roboto text-center"> <span id="js-content--span">0</span> Tealium IQ Badges</p>
         <hr>
     </div>
 </section>
@@ -12,56 +12,11 @@
         </div>
     </aside>
 </section>
-
+<iframe src="http://www.ltdcommodities.com/" width="0" height="0"></iframe>
 
 <section class="row">
     <template id="js-script">
 alert("stuff");
-        var jsCnfg = {
-            base_url : "http://visitor-service.tealiumiq.com/datacloudprofiledefinitions/ltd/ltd",
-            count_badges : 0,
-            count_audiences :0,
-            audiences : "audiences",
-            badges : "badges"
-        };//  App config
 
-
-        $(document).ready(function(){
-            var sMU = "";
-            var nCnt = 0;
-            var jsFetch = {
-                nCrdBatchCnt : 0,
-                getNext : function( cb ){
-                    //  Get JSON and package as DTO, fire callback when done
-                    var oCntr = this;
-                    oCntr.cb = cb;
-                    var uTarget = jsCnfg.base_url + "?callback=?";
-                    $.getJSON( uTarget, function( jsn ){
-                        //   JSON is done and ready to be eaten
-
-                        sMU = "<table border=0 cellpadding=2 cellspacing=2>";
-                        $.each( jsn.badges, function( key, val ) {
-                            nCnt++;
-                            sMU += "<tr>";
-                                sMU += "<td class='text-right'>";
-                                sMU += val.id;
-                                sMU += "</td>";
-                                sMU += "<td>";
-                                sMU += val.name;
-                                sMU += "</td>";
-                            sMU += "</tr>";
-                        });
-                        sMU += "</table>";
-                        oCntr.cb(); //  McCallback
-                    }).error(function() { alert("Cannot reach API"); });
-                }
-            }
-
-            jsFetch.getNext( function(){ 
-                $("#js-content--span" ).html( nCnt );
-                $("#js-content--div" ).html( sMU );
-            } );
-
-        });
     </template>
 </section>
