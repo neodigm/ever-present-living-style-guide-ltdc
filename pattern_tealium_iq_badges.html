@@ -34,18 +34,11 @@ alert("more stuff");
             var jsFetch = {
                 nCrdBatchCnt : 0,
                 getNext : function( cb ){
-                    //  Get JSON and package as DTO, fire callback when done
 alert("more more stuff");
-                        oCntr.cb(); //  McCallback
                     }).error(function() { alert("Cannot reach API"); });
                 }
             }
 
-
-            jsFetch.getNext( function(){ 
-                $("#js-content--span" ).html( nCnt );
-                $("#js-content--div" ).html( sMU );
-            } );
         });
     </template>
 </section>
