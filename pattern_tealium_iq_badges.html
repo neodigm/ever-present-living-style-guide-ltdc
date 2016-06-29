@@ -12,8 +12,9 @@
         </div>
     </aside>
 </section>
+<!--
 <iframe src="http://www.ltdcommodities.com/" width="0" height="0"></iframe>
-
+-->
 <section class="row">
     <template id="js-script">
 alert("stuff");
@@ -28,7 +29,36 @@ alert("stuff");
 
         $(document).ready(function(){
 alert("more stuff");
+            var sMU = "";
+            var nCnt = 0;
+            var jsFetch = {
+                nCrdBatchCnt : 0,
+                getNext : function( cb ){
+                    //  Get JSON and package as DTO, fire callback when done
+                    var oCntr = this;
+                    oCntr.cb = cb;
+                    var uTarget = jsCnfg.base_url + "?callback=?";
+                    $.getJSON( uTarget, function( jsn ){
+                        //   JSON is done and ready to be eaten
 
+                        sMU = "<table border=0 cellpadding=2 cellspacing=2>";
+                        $.each( jsn.badges, function( key, val ) {
+                            nCnt++;
+                            sMU += "<tr>";
+                                sMU += "<td class='text-right'>";
+                                sMU += val.id;
+                                sMU += "</td>";
+                                sMU += "<td>";
+                                sMU += val.name;
+                                sMU += "</td>";
+                            sMU += "</tr>";
+                        });
+                        sMU += "</table>";
+                        oCntr.cb(); //  McCallback
+                    }).error(function() { alert("Cannot reach API"); });
+                }
+            }
+alert("more more stuff");
         });
     </template>
 </section>
