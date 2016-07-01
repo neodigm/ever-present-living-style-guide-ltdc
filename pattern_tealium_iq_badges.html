@@ -28,9 +28,32 @@ alert("stuff");
 
 
         $(document).ready(function(){
+            var sMU = "";
+            var nCnt = 0;
+            var jsFetch = {
+                nCrdBatchCnt : 0,
+                getNext : function( cb ){
 
+                    var oCntr = this;
+                    oCntr.cb = cb;
+                    var uTarget = jsCnfg.base_url + "?callback=?";
+                    $.getJSON( uTarget, function( jsn ){
+
+
+
+                        $.each( jsn.badges, function( key, val ) {
 alert("1");
+                        });
 
+                        oCntr.cb(); //  McCallback
+                    }).error(function() { alert("Cannot reach API"); });
+                }
+            }
+
+            jsFetch.getNext( function(){ 
+                $("#js-content--span" ).html( nCnt );
+                $("#js-content--div" ).html( sMU );
+            } );
 
         });
     </template>
