@@ -18,12 +18,10 @@
     <div class="columns small-12 medium-6 large-4">
         <p class="caption--p__roboto text-center">Reference</p>
         <hr>
-        <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#wai-aria" target="_blank"
-        class="button extended hollow">A11y</a>
-        <a href="https://css-tricks.com/bem-101/" target="_blank"
-        class="button extended hollow">BEM</a>
-        <a href="http://placeholdit.imgix.net/~text?txtsize=33&txt=prime-banner-990-80&w=990&h=80" target="_blank"
-        class="button extended hollow">Place Holder</a>
+        <a href="http://realfavicongenerator.net/favicon_checker#.V-mLaPkrLRb" target="_blank"
+        class="button extended hollow">Fav Checker</a>
+        <a href="https://css-tricks.com/favicon-quiz/" target="_blank"
+        class="button extended hollow">Fav Icon Quiz</a>
     </div>
 </section>
 
@@ -34,37 +32,30 @@
 <section class="row">
 	<aside class="columns small-12">
 <pre>
-<code class="language-markup">&ltsection    class="prime-banner--section row" role="banner"&gt;
-    &ltaside   class="prime-banner--aside columns small-10"&gt; &lt/aside&gt;
-    &ltfigure  class="prime-banner--figure columns small-10"
-    aria-label="Primary Banner"&gt;
-         &lt!-- Content Begin --&gt;
-         &ltimg class="prime-banner--img" src="" alt="" title=""&gt;
-         &lt!-- Content End   --&gt;
-    &lt/figure&gt;
-&lt/section&gt;</code>
+<code class="language-markup">&ltc:choose&gt; 
+    &ltc:when test="${currentSite == 'LS' }"&gt; 
+        &ltlink rel="apple-touch-icon" sizes="180x180" href="/media/lakeside/images/apple-touch-icon.png"&gt; 
+        &ltlink rel="icon" type="image/png" href="/media/lakeside/images/favicon-32x32.png" sizes="32x32"&gt; 
+        &ltlink rel="icon" type="image/png" href="/media/lakeside/images/favicon-16x16.png" sizes="16x16"&gt; 
+        &ltlink rel="manifest" href="/media/lakeside/images/manifest.json"&gt; 
+        &ltlink rel="mask-icon" href="/media/lakeside/images/safari-pinned-tab.svg" color="#7e2d3e"&gt; 
+        &ltlink rel="shortcut icon" href="/media/lakeside/images/favicon.ico"&gt; 
+        &ltmeta name="msapplication-config" content="/media/lakeside/images/browserconfig.xml"&gt; 
+        &ltmeta name="theme-color" content="#7e2d3e"&gt; 
+    &lt/c:when&gt; 
+    &ltc:otherwise&gt; 
+        &ltlink rel="apple-touch-icon" sizes="180x180" href="/media/ltd/images/apple-touch-icon.png"&gt; 
+        &ltlink rel="icon" type="image/png" href="/media/ltd/images/favicon-32x32.png" sizes="32x32"&gt; 
+        &ltlink rel="icon" type="image/png" href="/media/ltd/images/favicon-16x16.png" sizes="16x16"&gt; 
+        &ltlink rel="manifest" href="/media/ltd/images/manifest.json"&gt; 
+        &ltlink rel="mask-icon" href="/media/ltd/images/safari-pinned-tab.svg" color="#297fb8"&gt; 
+        &ltlink rel="shortcut icon" href="/media/ltd/images/favicon.ico"&gt; 
+        &ltmeta name="msapplication-config" content="/media/ltd/images/browserconfig.xml"&gt; 
+        &ltmeta name="theme-color" content="#297fb8"&gt; 
+    &lt/c:otherwise&gt; 
+&lt/c:choose&gt; </code>
 </pre>
 <hr>
-<pre>
-<code class="language-css">.prime-banner--section {
-    padding-left: 0;
-    padding-right: 0;
-}
-.prime-banner--aside {
-    height: 0px;
-}
-.prime-banner--figure {
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 10px;
-}
-.shoppingCart           .prime-banner--aside { height: 12px; }
-#onePageCheckout        .prime-banner--aside { height: 12px; }
-.orderConfirm           .prime-banner--aside { height: 12px; }
-.signin                 .prime-banner--aside { height: 12px; }
-.catalogQuickOrder      .prime-banner--aside { height: 12px; }
-.checkout--order-commit .prime-banner--aside { height: 12px; }</code>
-</pre>
 
 	</aside>
 </section>
