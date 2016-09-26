@@ -1,0 +1,70 @@
+<section class="row">
+    <div class="columns small-12">
+        <p class="caption--p__roboto text-center">Pattern: Favorite and Touch Icons</p>
+        <hr>
+    </div>
+</section>
+<section class="row">
+    <div class="columns small-12 medium-12 large-4">
+        <p class="caption--p__roboto text-center">Problem</p>
+        <hr>
+        <p class="article--p__roboto text-center">Each browser and operating system requests is own unique fav or touch icon.  Many unfulfilled requests fill up the server logs with 404 requests.  Mobile browsers expect touch icons to be sized properly for the home screen.</p>
+    </div>
+    <div class="columns small-12 medium-6 large-4">
+        <p class="caption--p__roboto text-center">Solution</p>
+        <hr>
+        <p class="article--p__roboto text-center">Utilize best practices to generate all required dimensions from a single branded image.  This process also generates the meta tags and the manifest json / xml required by various UA/OS combinations.</p>
+    </div>
+    <div class="columns small-12 medium-6 large-4">
+        <p class="caption--p__roboto text-center">Reference</p>
+        <hr>
+        <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#wai-aria" target="_blank"
+        class="button extended hollow">A11y</a>
+        <a href="https://css-tricks.com/bem-101/" target="_blank"
+        class="button extended hollow">BEM</a>
+        <a href="http://placeholdit.imgix.net/~text?txtsize=33&txt=prime-banner-990-80&w=990&h=80" target="_blank"
+        class="button extended hollow">Place Holder</a>
+    </div>
+</section>
+
+
+
+
+
+<section class="row">
+	<aside class="columns small-12">
+<pre>
+<code class="language-markup">&ltsection    class="prime-banner--section row" role="banner"&gt;
+    &ltaside   class="prime-banner--aside columns small-10"&gt; &lt/aside&gt;
+    &ltfigure  class="prime-banner--figure columns small-10"
+    aria-label="Primary Banner"&gt;
+         &lt!-- Content Begin --&gt;
+         &ltimg class="prime-banner--img" src="" alt="" title=""&gt;
+         &lt!-- Content End   --&gt;
+    &lt/figure&gt;
+&lt/section&gt;</code>
+</pre>
+<hr>
+<pre>
+<code class="language-css">.prime-banner--section {
+    padding-left: 0;
+    padding-right: 0;
+}
+.prime-banner--aside {
+    height: 0px;
+}
+.prime-banner--figure {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 10px;
+}
+.shoppingCart           .prime-banner--aside { height: 12px; }
+#onePageCheckout        .prime-banner--aside { height: 12px; }
+.orderConfirm           .prime-banner--aside { height: 12px; }
+.signin                 .prime-banner--aside { height: 12px; }
+.catalogQuickOrder      .prime-banner--aside { height: 12px; }
+.checkout--order-commit .prime-banner--aside { height: 12px; }</code>
+</pre>
+
+	</aside>
+</section>
