@@ -1,0 +1,73 @@
+<section class="row">
+    <div class="columns small-12">
+        <p class="caption--p__roboto text-center">Pattern: Favorite and Touch Icons</p>
+        <hr>
+    </div>
+</section>
+<section class="row">
+    <div class="columns small-12 medium-12 large-4">
+        <p class="caption--p__roboto text-center">Problem</p>
+        <hr>
+        <p class="article--p__roboto text-center">Each browser and operating system requests is own unique fav or touch icon.  Many unfulfilled requests fill up the server logs with 404 requests.  Mobile browsers expect touch icons to be sized properly for the home screen.</p>
+    </div>
+    <div class="columns small-12 medium-6 large-4">
+        <p class="caption--p__roboto text-center">Solution</p>
+        <hr>
+        <p class="article--p__roboto text-center">Utilize best practices to generate all required dimensions from a single branded image.  This process also generates the meta tags and the manifest json / xml required by various UA/OS combinations.</p>
+    </div>
+    <div class="columns small-12 medium-6 large-4">
+        <p class="caption--p__roboto text-center">Reference</p>
+        <hr>
+        <a href="http://realfavicongenerator.net/favicon_checker#.V-mLaPkrLRb" target="_blank"
+        class="button extended hollow">Fav Checker</a>
+        <a href="https://css-tricks.com/favicon-quiz/" target="_blank"
+        class="button extended hollow">Fav Icon Quiz</a>
+    </div>
+</section>
+
+
+
+
+
+<section class="row">
+    <div class="columns small-12">
+        <table border="1" cellpadding="2" cellspacing="2">
+            <tr>
+                <td>
+                    <img src="https://raw.githubusercontent.com/neodigm/ever-present-living-style-guide-ltdc/gh-pages/img/lak_apple-touch-icon.png">
+                </td>
+                <td>
+                    <img src="https://raw.githubusercontent.com/neodigm/ever-present-living-style-guide-ltdc/gh-pages/img/ltd_apple-touch-icon.png">
+                </td>
+            </tr>
+        </table>
+    </div>
+	<aside class="columns small-12">
+<pre>
+<code class="language-markup">&ltc:choose&gt; 
+    &ltc:when test="${currentSite == 'LS' }"&gt; 
+        &ltlink rel="apple-touch-icon" sizes="180x180" href="/media/lakeside/images/apple-touch-icon.png"&gt; 
+        &ltlink rel="icon" type="image/png" href="/media/lakeside/images/favicon-32x32.png" sizes="32x32"&gt; 
+        &ltlink rel="icon" type="image/png" href="/media/lakeside/images/favicon-16x16.png" sizes="16x16"&gt; 
+        &ltlink rel="manifest" href="/media/lakeside/images/manifest.json"&gt; 
+        &ltlink rel="mask-icon" href="/media/lakeside/images/safari-pinned-tab.svg" color="#7e2d3e"&gt; 
+        &ltlink rel="shortcut icon" href="/media/lakeside/images/favicon.ico"&gt; 
+        &ltmeta name="msapplication-config" content="/media/lakeside/images/browserconfig.xml"&gt; 
+        &ltmeta name="theme-color" content="#7e2d3e"&gt; 
+    &lt/c:when&gt; 
+    &ltc:otherwise&gt; 
+        &ltlink rel="apple-touch-icon" sizes="180x180" href="/media/ltd/images/apple-touch-icon.png"&gt; 
+        &ltlink rel="icon" type="image/png" href="/media/ltd/images/favicon-32x32.png" sizes="32x32"&gt; 
+        &ltlink rel="icon" type="image/png" href="/media/ltd/images/favicon-16x16.png" sizes="16x16"&gt; 
+        &ltlink rel="manifest" href="/media/ltd/images/manifest.json"&gt; 
+        &ltlink rel="mask-icon" href="/media/ltd/images/safari-pinned-tab.svg" color="#297fb8"&gt; 
+        &ltlink rel="shortcut icon" href="/media/ltd/images/favicon.ico"&gt; 
+        &ltmeta name="msapplication-config" content="/media/ltd/images/browserconfig.xml"&gt; 
+        &ltmeta name="theme-color" content="#297fb8"&gt; 
+    &lt/c:otherwise&gt; 
+&lt/c:choose&gt; </code>
+</pre>
+<hr>
+
+	</aside>
+</section>
