@@ -1,9 +1,11 @@
 # ever-present-living-style-guide-ltdc
 
 Putting your Living Style Guide in the browser makes it easily available to the whole team. A Living Style Guide saves time, facilitates communication, and documents the visual language for both designers and developers.
+---
+![](https://repository-images.githubusercontent.com/178555357/2b6ad880-7aa0-11ea-8dde-63e70187e3e9)
 #
-[Portfolio](https://www.theScottKrause.com) |
-[Blog](https://www.theScottKrause.com/WebAssembly) |
+[Portfolio Blog](https://www.theScottKrause.com) |
+[NPM](https://www.npmjs.com/~neodigm) |
 [Github](https://github.com/neodigm) |
 [LinkedIn](https://www.linkedin.com/in/neodigm24/) |
 [Salesforce](https://trailblazer.me/id/skrause) |
@@ -11,4 +13,6 @@ Putting your Living Style Guide in the browser makes it easily available to the 
 [Machvive](https://machvive.com/) |
 [Arcanus 55](https://www.arcanus55.com/) |
 [Repl](https://repl.it/@neodigm) |
-[Twitter](https://twitter.com/neodigm24)
+[Twitter](https://twitter.com/neodigm24) |
+[Keybase](https://keybase.io/neodigm)
+#
