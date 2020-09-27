@@ -15,6 +15,7 @@
       "name": "Scott Krause",
       "url": "https://www.theScottKrause.com",
 	    "sameAs" : [ "https://github.com/neodigm",
+		"https://thescottkrause.com/Arcanus_Scott_C_Krause_2020.pdf",
 	    "https://www.theScottKrause.com/neodigm-wasm-golang",
 		"https://www.npmjs.com/~neodigm",
 	    "https://www.linkedin.com/in/neodigm24/",
