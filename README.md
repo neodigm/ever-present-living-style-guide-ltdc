@@ -2,6 +2,30 @@
 
 Putting your Living Style Guide in the browser makes it easily available to the whole team. A Living Style Guide saves time, facilitates communication, and documents the visual language for both designers and developers.
 
+```javascript
+function displayMsg( sMsg ){
+    //    System Tray Notification
+    console.log( sMsg );
+    if (!("Notification" in window)) {
+        console.log('Notification API not supported.');
+        return;
+    } else if (Notification.permission === "granted") {
+        // If it's okay let's create a notification
+        audioSuccessSound();
+                var notification = new Notification( Nowish(), {icon: "http://neodigm.github.io/ever-present-living-style-guide-site/img/ever-present-living-style-guide.png", body: sMsg} );
+    } else if (Notification.permission !== "denied") {
+        // Otherwise, we need to ask the user for permission
+
+        Notification.requestPermission(function (permission) {
+            // If the user accepts, let's create a notification
+            if (permission === "granted") {
+                var notification = new Notification( Nowish(), {icon: "http://neodigm.github.io/ever-present-living-style-guide-site/img/ever-present-living-style-guide.png", body: sMsg} );
+            }
+        });
+    }
+}
+```
+
 #
 [Portfolio Blog](https://www.theScottKrause.com) |
 [🦄 Résumé](https://thescottkrause.com/Arcanus_Scott_C_Krause_2020.pdf) |
