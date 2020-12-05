@@ -2,6 +2,8 @@
 
 Putting your Living Style Guide in the browser makes it easily available to the whole team. A Living Style Guide saves time, facilitates communication, and documents the visual language for both designers and developers.
 
+## Sample JS Pattern
+
 ```javascript
 function displayMsg( sMsg ){
     //    System Tray Notification
@@ -25,6 +27,10 @@ function displayMsg( sMsg ){
     }
 }
 ```
+
+## Sample UX asset
+
+[https://github.com/neodigm/ever-present-living-style-guide-ltdc/blob/master/img/usability-heuristics.jpg?raw=true](https://thescottkrause.com/categories/ux/)
 
 #
 [Portfolio Blog](https://www.theScottKrause.com) |
