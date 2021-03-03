@@ -5,7 +5,7 @@ Putting your Living Style Guide in the browser makes it easily available to the 
 ## Sample JS Pattern
 
 ```javascript
-function displayMsg( sMsg ){
+function displayMsg( sMsg ){  //  www.TheScottKrause.com
     //    System Tray Notification
     console.log( sMsg );
     if (!("Notification" in window)) {
