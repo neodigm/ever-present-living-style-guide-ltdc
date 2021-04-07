@@ -1,6 +1,6 @@
 # Ever Present Living Style Guide Pattern Library
 
-Putting your Living Style Guide in the browser makes it easily available to the whole team. A Living Style Guide saves time, facilitates communication, and documents the visual language for both designers and developers.
+Putting your Living Style Guide in the browser makes it easily available to the whole team. A Living Style Guide saves time, facilitates communication, and documents the [visual language](https://thescottkrause.com/tags/curated/) for both designers and developers.
 
 [UX Usability Heuristics | HE](https://thescottkrause.com/categories/ux/)
 
