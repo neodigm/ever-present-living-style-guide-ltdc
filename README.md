@@ -33,7 +33,7 @@ function displayMsg( sMsg ){  //  www.TheScottKrause.com
 ## Sample UX asset
 
 <p align="center">
-  <a target="_blank" href="https://thescottkrause.com/categories/ux/">
+  <a target="_blank" href="https://www.thescottkrause.com/categories/ux/">
   <img src="https://github.com/neodigm/ever-present-living-style-guide-ltdc/blob/master/img/usability-heuristics.jpg?raw=true" title="TypeScript UX Skills">
   </a>
 </p>
