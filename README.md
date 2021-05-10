@@ -34,7 +34,7 @@ function displayMsg( sMsg ){  //  www.TheScottKrause.com
 
 <p align="center">
   <a target="_blank" href="https://www.thescottkrause.com/categories/ux/">
-  <img src="https://github.com/neodigm/ever-present-living-style-guide-ltdc/blob/master/img/usability-heuristics.jpg?raw=true" title="DataVis 🚀 Micro Frontend 🚀 PWA">
+  <img src="https://thescottkrause.com/emerging_tech/ux-usability-heuristics_tn.webp" title="DataVis 🚀 Micro Frontend 🚀 PWA">
   </a>
 </p>
 
