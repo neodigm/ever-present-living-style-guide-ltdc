@@ -30,7 +30,7 @@ function displayMsg( sMsg ){  //  www.TheScottKrause.com
 }
 ```
 
-## Sample UX asset
+## [UX Heuristics | HE | 🌑🌒🌓🌔🌕🌖🌗🌘🌑](https://thescottkrause.com/emerging_tech/ux-usability-heuristics/)
 
 <p align="center">
   <a target="_blank" href="https://www.thescottkrause.com/categories/ux/">
