@@ -4,7 +4,7 @@ Putting your Living Style Guide in the browser makes it easily available to the 
 
 [UX Usability Heuristics | HE](https://www.thescottkrause.com/categories/ux/)
 
-## Sample JS Pattern
+## Sample JavaScript Pattern
 
 ```javascript
 function displayMsg( sMsg ){  //  www.TheScottKrause.com
