@@ -59,7 +59,7 @@ function displayMsg( sMsg ){  //  www.TheScottKrause.com
 #
 <p align="center">
 	  <a target="_blank" href="https://www.thescottkrause.com/emerging_tech/cytoscape_dataviz_skills/">
-	  	<img src="https://neodigm.github.io/brand_logo_graphic_design/fantastic/discerning/22.webp" alt="TypeScript UX 🪐 Interactive Infographic ⚡ WASM ✨ PWA 🍭 Svelte">
+	  	<img src="https://neodigm.github.io/brand_logo_graphic_design/fantastic/discerning/22.webp" alt="TypeScript UX 🪐 Interactive Infographic ⚡ DataVis 👁️ UX 🍭 PWA 👁️ ThreeJS ✨ RUST WASM  🚀 SSE 🌶️ htmx">
 	  </a>
 </p>
 
